@@ -1,0 +1,12 @@
+{
+  "App": {
+    "inicio": "Inicio",
+    "acerca_de": "Acerca de"
+  },
+  "Home": {
+    "texto": "Bienvenido a tu aplicación de Vue.js"
+  },
+  "About": {
+    "texto": "Esta es una página de acerca de"
+  }
+}

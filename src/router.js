@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-function loadView(view) {
+function loadView (view) {
   return () => import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`)
 }
 
