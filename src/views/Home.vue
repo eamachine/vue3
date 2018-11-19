@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld v-bind:msg="$t('Home.texto')"/>
+    <HelloWorld v-bind:msg="$t('tip_bancoX')"/>
   </div>
 </template>
 
