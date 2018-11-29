@@ -1,18 +1,25 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld v-bind:msg="$t('tip_bancoX')"/>
+    <b-card class="text-center" title="Creacion de clientes">
+    </b-card>
+    <b-card class="text-center">
+    <b-row>
+      <b-col md="3">
+        <label for="nombre">Nombre</label>
+        <b-form-input v-model="name"  type="text"  placeholder="Nombre" text="Nombre"></b-form-input>
+      </b-col>
+    </b-row>
+    </b-card>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      name: ''
+    }
   }
 }
 </script>

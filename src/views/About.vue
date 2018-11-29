@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>{{ $t('About.texto') }}</h1>
+    <h1>{{ $t('ACTIVIDADES_DE_INTEGRACION') }}</h1>
   </div>
 </template>

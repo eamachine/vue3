@@ -12,7 +12,7 @@ import axios from 'axios'
  * @returns {Promise} La promesa de carga del archivo de idioma
  */
 const loadLanguage = async (language) => {
-  return axios.post('http://7b905a2a.ngrok.io/serviceTraduccion', { 'idioma': 2 })
+  return axios.post('http://localhost:8000/serviceTraduccion', { 'idioma': 'es' })
     .then(response => {
       const resources = response.data
       i18next.addResourceBundle(language, 'translation', resources)

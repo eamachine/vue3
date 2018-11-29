@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 Vue.use(Router)
 
 function loadView (view) {
@@ -13,6 +12,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'inicio'
+    },
+    {
+      path: '/home',
       name: 'home',
       component: loadView('Home')
     },

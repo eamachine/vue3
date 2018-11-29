@@ -1,9 +1,16 @@
 <template>
-  <div id="app" v-if="$store.state.i18nReady">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app">
+        <navBar/>
+        <router-view/>
   </div>
 </template>
+<script>
+// @ is an alias to /src
+import navBar from '@/components/navBar.vue'
+export default {
+  name: 'App',
+  components: {
+    navBar
+  }
+}
+</script>
