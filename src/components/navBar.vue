@@ -1,7 +1,7 @@
 <template>
   <b-navbar toggleable="md" type="dark" id="menu-principal">
-    <b-row style="width: 110%;">
-      <b-col lg="8" style="text-align: left;">
+    <b-row style="width: 100%;margin-left:0%">
+      <b-col lg="8" style="text-align: left">
         <h6>
           <span class="txt-white">
             {{ $t('lbl_bienvenido') }}
@@ -19,24 +19,19 @@
       </b-col>
       <b-col lg="4" class="text-right" id="menu-derecho">
         <h6>
-          <span class="flagLanguage flagLanguageCurrent flagLanguage-es" title="ES"></span>
-          <a style="cursor: pointer;" class="btn-flag-change-idi" title="ES">
-            <span class="flagLanguage flagLanguage-en"></span>
-          </a>
-          <a style="cursor: pointer;" class="btn-flag-change-idi" title="ES">
-            <span class="flagLanguage flagLanguage-fr"></span>
-          </a>
-          <a href="ayuda/index.html" target="_blank" class="margin-nav">
+            <span class="flagLanguage flagLanguage-es" title="ES" v-on:click="changeLang('es')"></span>
+            <span class="flagLanguage flagLanguage-en" title="EN" v-on:click="changeLang('en')"></span>
+            <span class="flagLanguage flagLanguage-fr" title="FR" v-on:click="changeLang('fr')"></span>
+          <a href="ayuda/index.html" target="_blank" class="margin-nav" >
             <span class="fas fa-question-circle"></span>
             {{ $t('lbl_ayuda') }}
           </a>
-          <a href="acceso/menu.php" target="iframe01" class="margin-nav">
+          <a to="/home" class="margin-nav">
             <span class="fas fa-info-circle"></span>
             {{ $t('lbl_novedades') }}
           </a>
           <a href="#" data-target="#modalSoporte" data-toggle="modal" class="margin-nav">
             <span class="fas fa-headphones-alt">
-              <i c></i>
             </span>
             {{ $t('lbl_soporte') }}
           </a>
@@ -47,52 +42,43 @@
         </h6>
       </b-col>
       <b-col style="display: -webkit-inline-box;" class="mega-menu-container">
-        <a class="navbar-brand pull-right" href="/" >
-          <img class="logo" src="/assets/img/decameronB.svg">
+        <a class="" href="#">
+          <img class="logo" src="../assets/img/decameronB.svg">
         </a>
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
-          <!-- <b-navbar-nav v-for="route in rutas" :key=" route.name">
-        <b-nav-item :to="route">{{ route.title }}<i class="fas fa-angle-right"></i></b-nav-item>
-          </b-navbar-nav>-->
+          <b-navbar-nav class="">
+            <b-nav-item href="/">{{ $t('lbl_inicio') }}</b-nav-item>
           <b-nav-item-dropdown :text="$t(route.title)" v-for="route in rutas" :key="route.name">
+            <ul class="nav navbar-nav text-rignt">
+
             <b-dropdown-item :to="routeInt.url" v-for="routeInt in route.children" :key="routeInt.children">{{ $t(routeInt.title) }}</b-dropdown-item>
+            </ul>
           </b-nav-item-dropdown>
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto"></b-navbar-nav>
+          </b-navbar-nav>
         </b-collapse>
       </b-col>
     </b-row>
   </b-navbar>
 </template>
 <script>
+import i18next from 'i18next'
 export default {
   name: 'navbarComponet',
   data () {
     return {
       rutas: [
         {
-          name: 'inicio',
-          title: 'lbl_inicio',
-          children: [
-            {
-              name: 'pruebainterna',
-              title: 'mnu_tablas',
-              url: '/home'
-            },
-            {
-              name: 'pruebainterna',
-              title: 'mnu_factura'
-            }
-          ]
-        },
-        {
           title: 'MNU_TIP_AVION',
           children: [
             {
-              name: 'pruebaMenu1',
               title: 'MNU_LOG_APAACC',
               url: '/about'
+            },
+            {
+              title: 'mnu_tablas',
+              url: '/home'
             }
           ]
         },
@@ -100,22 +86,30 @@ export default {
           title: 'MNU_RECEPTIVO',
           children: [
             {
-              name: 'home',
-              title: 'mnu_vuelos'
+              title: 'mnu_vuelos',
+              url: '/'
             }
           ]
         }
       ]
     }
+  },
+  methods: {
+    changeLang: function (Idiom) {
+      i18next.changeLanguage(Idiom, (err, t) => {
+        if (err) return console.log('something went wrong loading', err)
+        t('key') // -> same as i18next.t
+      })
+    }
   }
 }
 </script>
 <style>
-header #menu-principal .navbar-nav li a:hover,
-header #menu-principal .navbar-nav li a:focus,
-header #menu-principal .navbar-nav li a:active,
-header #menu-principal .navbar-nav li.active .dropdown .mega-dropdown.open a.dropdown-toggle:hover,
-header #menu-principal .navbar-nav li.active .dropdown .mega-dropdown ul.dropdown-menu .mega-dropdown-menu a:hover {
+#menu-principal .navbar-nav li a:hover,
+#menu-principal .navbar-nav li a:focus,
+#menu-principal .navbar-nav li a:active,
+#menu-principal .navbar-nav li.active .dropdown .mega-dropdown.open a.dropdown-toggle:hover,
+#menu-principal .navbar-nav li.active .dropdown .mega-dropdown ul.dropdown-menu .mega-dropdown-menu a:hover {
     background: white !important;
 }
 

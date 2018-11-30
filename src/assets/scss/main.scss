@@ -1,19 +1,8 @@
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 h3 {
   margin: 40px 0 0;
@@ -132,6 +121,7 @@ a {
   border-bottom-color: rgba(70, 158, 195, 1);
   background-color: rgba(70, 158, 195, 1);
   transition: background 1s;
+  padding: inherit;
 }
 #menu-derecho {
   float: right;
@@ -143,6 +133,12 @@ a {
 #menu-derecho a {
   color: #ffffff;
   font-size: 12px;
+}
+.navbar-brand {
+  float: left;
+  height: 30px;
+  padding: 4px 0px;
+  line-height: 0px;
 }
 .txt-white {
   color: #ffffff;
@@ -237,7 +233,10 @@ a {
 .mega-menu-container{
   float:none;
 }
-
+.logo{
+  height: 85%;
+  display: inline-block;
+}
 .mega-dropdown {
   position: static;
 }
@@ -276,13 +275,13 @@ a {
   color: #ffffff;
   background-color: #469ec3;
 }
-.mega-dropdown-menu .dropdown-header {
+.mega-dropdown-menu {
   color: #469ec3;
   font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
   border-bottom: 1px solid transparent !important;
 }
-.mega-dropdown-menu ul .dropdown-header:first-of-type {
+.mega-dropdown-menu ul {
   margin-top: 0px;
 }
