@@ -30,7 +30,7 @@ i18next.init({
 // loadLanguage('es').then(() => {
 //   store.commit('i18nReady')
 // })
-
+//
 Vue.use(VueI18Next)
 export default new VueI18Next(i18next)
 
