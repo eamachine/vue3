@@ -230,13 +230,26 @@ a {
   /*margin: auto;*/
   left: 2%;
 }
-.mega-menu-container{
+.mega-menu-container {
+  display: inline-flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   float:none;
 }
-.logo{
-  height: 85%;
-  display: inline-block;
+
+.navbar-toggle {
+  margin-bottom: 10px;
 }
+
+.logo {
+  display: inline-block;
+  width: 100px;
+
+  &__link {
+    margin: 0 5px;
+  }
+}
+
 .mega-dropdown {
   position: static;
 }

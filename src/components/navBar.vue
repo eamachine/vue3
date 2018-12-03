@@ -41,11 +41,11 @@
           </a>
         </h6>
       </b-col>
-      <b-col style="display: -webkit-inline-box;" class="mega-menu-container">
-        <a class="" href="#">
+      <b-col class="mega-menu-container">
+        <a href="#" class="logo__link" >
           <img class="logo" src="../assets/img/decameronB.svg">
         </a>
-        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+        <b-navbar-toggle target="nav_collapse" class="navbar-toggle"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav class="">
             <b-nav-item href="/">{{ $t('lbl_inicio') }}</b-nav-item>
